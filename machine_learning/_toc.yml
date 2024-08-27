@@ -4,7 +4,8 @@
 format: jb-book
 root: intro
 chapters:
-- file: Signal_processing_ipython
+- file: content/Signal_processing_ipython
 - file: markdown
 - file: notebooks
 - file: markdown-notebooks
+- file: references
