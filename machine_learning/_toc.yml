@@ -3,9 +3,14 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: content/Signal_processing_ipython
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
-- file: references
+
+parts:
+  - caption: Fundamentals - Shin et al
+    chapters:
+    - file: content_shin/generation_continous_time_signal
+  - caption: Fundamentals - Other
+    chapters:
+    - file: content/Signal_processing_ipython
+  - caption: Referências
+    chapters:
+    - file: references
