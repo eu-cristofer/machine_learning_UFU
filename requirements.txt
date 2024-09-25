@@ -1,7 +1,7 @@
 numpy
 matplotlib
 scipy
-sklearn
+scikit-learn
 keras
 tensorflow
 jupyter-book
