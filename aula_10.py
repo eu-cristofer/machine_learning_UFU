@@ -12,6 +12,9 @@ raw_df = pd.read_csv(
     skiprows=22,
     header=None
 )
+
+print(raw_df.head())
+
 data = np.hstack(
     [raw_df.values[::2, :],
      raw_df.values[1::2, :2]]

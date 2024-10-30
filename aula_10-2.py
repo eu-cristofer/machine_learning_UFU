@@ -3,35 +3,48 @@
 """
 Created on Wed Oct 23 08:31:36 2024
 
+O objetivo do presente código consiste em escolher
+as doze melhores features do banco de dados otto group
+para um projeto de machine learning.
+
 @author: cristofer
 """
-
 import pandas as pd
 import seaborn as sns
 
-home_data = pd.read_csv('data_files/housing.csv')
-print(home_data.head())
+# Loading housing dataset
+data = pd.read_csv('data_files/otto_group.csv')
 
-import seaborn as sns
+target = data['target'].values
+print((target))
 
-sns.scatterplot(
-    data=home_data,
-    x='longitude', 
-    y='latitude', 
-    hue='median_house_value'
-)
 
-from sklearn.model_selection import train_test_split
+# # Loading housing dataset
+# home_data = pd.read_csv('data_files/housing.csv')
+# print(home_data.head())
 
-X_train, X_test, y_train, y_test = train_test_split(home_data[['latitude', 'longitude']], home_data[['median_house_value']], test_size=0.33, random_state=0)
 
-from sklearn import preprocessing
 
-X_train_norm = preprocessing.normalize(X_train)
-X_test_norm = preprocessing.normalize(X_test)
+# import seaborn as sns
 
-from sklearn import KMeans
+# # sns.scatterplot(
+# #     data=home_data,
+#     x='longitude', 
+#     y='latitude', 
+#     hue='median_house_value'
+# )
 
-kmeans = KMeans(n_clusters = 3, random_state = 0, n_init='auto')
-kmeans.fit(X_train_norm)
+# from sklearn.model_selection import train_test_split
+
+# X_train, X_test, y_train, y_test = train_test_split(home_data[['latitude', 'longitude']], home_data[['median_house_value']], test_size=0.33, random_state=0)
+
+# from sklearn import preprocessing
+
+# X_train_norm = preprocessing.normalize(X_train)
+# X_test_norm = preprocessing.normalize(X_test)
+
+# from sklearn import KMeans
+
+# kmeans = KMeans(n_clusters = 3, random_state = 0, n_init='auto')
+# kmeans.fit(X_train_norm)
 

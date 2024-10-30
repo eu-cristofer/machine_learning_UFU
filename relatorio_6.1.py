@@ -20,16 +20,16 @@ from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier
 
 # Prompt user to select the file
 filename = tkinter.filedialog.askopenfilename(
-    title="Escolha o Arquivo",
-    filetypes=[
-        ("Arquivos CSV", "*.csv"),
-        ("Arquivos Excel", "*.xlsx"),
-        ("Todos Arquivos", "*.*"),
-    ],
+	title="Escolha o Arquivo",
+	filetypes=[
+		("Arquivos CSV", "*.csv"),
+		("Arquivos Excel", "*.xlsx"),
+		("Todos Arquivos", "*.*"),
+	],
 )
 if not filename:
-    print("Ending the session.")
-    exit(0)
+	print("Ending the session.")
+	exit(0)
 
 # Load the dataset
 data = pd.read_csv(filename)
@@ -68,23 +68,23 @@ y = data["target"]
 
 # Split the data
 X_train, X_test, y_train, y_test = train_test_split(
-    X_train_pca, y, test_size=0.4, random_state=42
+	X_train_pca, y, test_size=0.4, random_state=42
 )
 
 # Random Forest Grid Search (Parallel processing enabled)
 param_grid_forest = {
-    "n_estimators": [50, 100],
-    "criterion": ["gini"],
-    "max_depth": [5],
-    "min_samples_leaf": [0.1],
-    "min_samples_split": [0.1],
+	"n_estimators": [50, 100],
+	"criterion": ["gini"],
+	"max_depth": [5],
+	"min_samples_leaf": [0.1],
+	"min_samples_split": [0.1],
 }
 
 rf = RandomForestClassifier(
-    random_state=123, warm_start=True
+	random_state=123, warm_start=True
 )  # Warm start optimization
 gs_rf = GridSearchCV(
-    rf, param_grid=param_grid_forest, scoring="accuracy", cv=3, verbose=2, n_jobs=-1
+	rf, param_grid=param_grid_forest, scoring="accuracy", cv=3, verbose=2, n_jobs=-1
 )
 gs_rf.fit(X_train, y_train)
 print(f"Random Forest Best Accuracy: {gs_rf.best_score_:.3f}")
@@ -95,13 +95,13 @@ adaboost_param_grid = {"n_estimators": [30, 50, 70], "learning_rate": [1.0, 0.5,
 
 ab = AdaBoostClassifier(random_state=123)
 random_search_ab = RandomizedSearchCV(
-    ab,
-    param_distributions=adaboost_param_grid,
-    n_iter=5,
-    scoring="accuracy",
-    cv=3,
-    verbose=2,
-    n_jobs=-1,
+	ab,
+	param_distributions=adaboost_param_grid,
+	n_iter=5,
+	scoring="accuracy",
+	cv=3,
+	verbose=2,
+	n_jobs=-1,
 )
 random_search_ab.fit(X_train, y_train)
 print(f"AdaBoost Best Accuracy: {random_search_ab.best_score_:.3f}")
@@ -109,13 +109,13 @@ print("Best Params:", random_search_ab.best_params_)
 
 # SVM Grid Search (Parallel processing enabled)
 param_grid_svm = [
-    {"C": [0.1, 1], "kernel": ["linear"]},
-    {"C": [1], "gamma": [0.001, 0.01], "kernel": ["rbf"]},
+	{"C": [0.1, 1], "kernel": ["linear"]},
+	{"C": [1], "gamma": [0.001, 0.01], "kernel": ["rbf"]},
 ]
 
 svm_model = svm.SVC(random_state=123)
 gs_svm = GridSearchCV(
-    svm_model, param_grid=param_grid_svm, scoring="accuracy", cv=3, verbose=2, n_jobs=-1
+	svm_model, param_grid=param_grid_svm, scoring="accuracy", cv=3, verbose=2, n_jobs=-1
 )
 gs_svm.fit(X_train, y_train)
 print(f"SVM Best Accuracy: {gs_svm.best_score_:.3f}")
@@ -134,5 +134,5 @@ tree_accuracy = decision_tree.score(X_test, y_test)
 print(f"Decision Tree Accuracy: {tree_accuracy:.3f}")
 
 
-# Print the entire cv_results_ dictionary (can be large)
+# Print
 print(gs_rf.cv_results_)
