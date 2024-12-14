@@ -1,0 +1,73 @@
+PS C:\Users\EMKA\OneDrive - PETROBRAS\Desktop\cousa> & C:/Users/EMKA/AppData/Local/miniforge3/envs/machine_learning/python.exe "c:/Users/EMKA/OneDrive - PETROBRAS/Desktop/cousa/file.py"
+2024-11-25 00:17:22.493743: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2024-11-25 00:17:26.092318: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+TensorFlow version: 2.18.0
+2024-11-25 00:17:35.186599: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.        
+C:\Users\EMKA\AppData\Local\miniforge3\envs\machine_learning\Lib\site-packages\keras\src\layers\core\dense.py:87: UserWarning: Do not pass an `input_shape`/`input_dim` argument to a layer. When using Sequential models, prefer using an `Input(shape)` object as the first layer in the model instead.
+  super().__init__(activity_regularizer=activity_regularizer, **kwargs)
+C:\Users\EMKA\AppData\Local\miniforge3\envs\machine_learning\Lib\site-packages\keras\src\layers\convolutional\base_conv.py:107: UserWarning: Do not pass an `input_shape`/`input_dim` argument to a layer. When using Sequential models, prefer using an `Input(shape)` object as the first layer in the model instead.
+  super().__init__(activity_regularizer=activity_regularizer, **kwargs)
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1732504657.780269   37072 meta_optimizer.cc:966] remapper failed: INVALID_ARGUMENT: Mutation::Apply error: fanout 'gradient_tape/sequential_1_4/leaky_re_lu_4_1/LeakyRelu/LeakyReluGrad_1' exist for missing node 'sequential_1_4/conv2d_1_2/add'.        
+2024-11-25 00:18:32.580963: I tensorflow/core/framework/local_rendezvous.cc:405] Local rendezvous is aborting with status: OUT_OF_RANGE: End of sequence
+Time for epoch 1 is 61.39 sec
+2024-11-25 00:19:29.228734: I tensorflow/core/framework/local_rendezvous.cc:405] Local rendezvous is aborting with status: OUT_OF_RANGE: End of sequence
+Time for epoch 2 is 52.68 sec
+Time for epoch 3 is 54.15 sec
+2024-11-25 00:21:16.526950: I tensorflow/core/framework/local_rendezvous.cc:405] Local rendezvous is aborting with status: OUT_OF_RANGE: End of sequence
+Time for epoch 4 is 53.08 sec
+Time for epoch 5 is 51.26 sec
+Time for epoch 6 is 51.13 sec
+Time for epoch 7 is 52.03 sec
+2024-11-25 00:24:40.357242: I tensorflow/core/framework/local_rendezvous.cc:405] Local rendezvous is aborting with status: OUT_OF_RANGE: End of sequence
+Time for epoch 8 is 49.40 sec
+Time for epoch 9 is 50.15 sec
+Time for epoch 10 is 50.53 sec
+Time for epoch 11 is 51.22 sec
+Time for epoch 12 is 51.35 sec
+Time for epoch 13 is 52.23 sec
+Time for epoch 14 is 51.59 sec
+Time for epoch 15 is 51.80 sec
+2024-11-25 00:31:30.646841: I tensorflow/core/framework/local_rendezvous.cc:405] Local rendezvous is aborting with status: OUT_OF_RANGE: End of sequence
+Time for epoch 16 is 51.40 sec
+Time for epoch 17 is 50.41 sec
+Time for epoch 18 is 51.59 sec
+Time for epoch 19 is 50.95 sec
+Time for epoch 20 is 51.40 sec
+Time for epoch 21 is 51.25 sec
+Time for epoch 22 is 50.57 sec
+Time for epoch 23 is 51.13 sec
+Time for epoch 24 is 53.76 sec
+Time for epoch 25 is 51.47 sec
+Time for epoch 26 is 51.32 sec
+Time for epoch 27 is 50.66 sec
+Time for epoch 28 is 50.90 sec
+Time for epoch 29 is 55.83 sec
+Time for epoch 30 is 58.52 sec
+Time for epoch 31 is 52.90 sec
+2024-11-25 00:45:24.250190: I tensorflow/core/framework/local_rendezvous.cc:405] Local rendezvous is aborting with status: OUT_OF_RANGE: End of sequence
+Time for epoch 32 is 50.93 sec
+Time for epoch 33 is 50.62 sec
+Time for epoch 34 is 51.24 sec
+Time for epoch 35 is 50.57 sec
+Time for epoch 36 is 50.56 sec
+Time for epoch 37 is 50.86 sec
+Time for epoch 38 is 51.11 sec
+Time for epoch 39 is 51.15 sec
+Time for epoch 40 is 51.42 sec
+Time for epoch 41 is 51.01 sec
+Time for epoch 42 is 53.44 sec
+Time for epoch 43 is 50.83 sec
+Time for epoch 44 is 51.33 sec
+Time for epoch 45 is 50.70 sec
+Time for epoch 46 is 50.94 sec
+Time for epoch 47 is 50.42 sec
+Time for epoch 48 is 50.32 sec
+Time for epoch 49 is 50.56 sec
+Time for epoch 50 is 50.80 sec
+c:\Users\EMKA\OneDrive - PETROBRAS\Desktop\cousa\file.py:142: DeprecationWarning: Starting with ImageIO v3 the behavior of this function will switch to that of iio.v3.imread. To keep the current behavior (and make this warning disappear) use `import imageio.v2 as imageio` or call `imageio.v2.imread` directly.
+  image = imageio.imread(filename)
+c:\Users\EMKA\OneDrive - PETROBRAS\Desktop\cousa\file.py:144: DeprecationWarning: Starting with ImageIO v3 the behavior of this function will switch to that of iio.v3.imread. To keep the current behavior (and make this warning disappear) use `import imageio.v2 as imageio` or call `imageio.v2.imread` directly.
+  writer.append_data(imageio.imread(filenames[-1]))
+GIF saved as dcgan.gif.
